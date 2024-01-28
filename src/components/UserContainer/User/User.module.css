@@ -4,9 +4,9 @@
     justify-content: center;
     align-items: center;
     margin: 0.5vw;
-    border: 0.3vw solid yellow;
+    border: 0.3vw solid #ecec8b;
     width: calc(20% - 2vw);
-    box-shadow: 0.5vw 0.5vw 0.5vw red;
-    background: yellow;
+    box-shadow: 0.5vw 0.5vw 0.5vw #ce7070;
+    background: #e7e79c;
     font-size: 1vw;
 }
