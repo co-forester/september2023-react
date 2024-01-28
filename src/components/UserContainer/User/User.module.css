@@ -10,3 +10,17 @@
     background: #e7e79c;
     font-size: 1vw;
 }
+button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4vw;
+    height: 1.4vw;
+    margin: 0.3vw ;
+    box-shadow: 0.3vw 0.3vw 0.3vw #ce7070;
+    font-size: 1vw;
+}
+.Name{
+    font-size: 1.3vw;
+    color: #af1010;
+}

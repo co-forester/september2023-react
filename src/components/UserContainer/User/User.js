@@ -8,7 +8,7 @@ const User = ({user, click}) => {
     return (
         <div className={css.User}>
             <div>id: {id}</div>
-            <div>name: {name}</div>
+            <div className={css.Name}>name: {name}</div>
             <button onClick={() => click(id)}>Details</button>
         </div>
     );
