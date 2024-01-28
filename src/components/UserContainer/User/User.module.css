@@ -1,0 +1,11 @@
+.User {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5vw;
+    border: 0.3vw solid yellow;
+    width: calc(20% - 2vw);
+    box-shadow: 0.5vw 0.5vw 0.5vw red;
+    background: yellow;
+    font-size: 1vw;
+}

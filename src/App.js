@@ -1,9 +1,11 @@
 import React from 'react';
 
+import {Users} from "./components/UserContainer/Users/Users.js";
+
 const App = () => {
     return (
         <div>
-            App
+            <Users/>
         </div>
     );
 };
