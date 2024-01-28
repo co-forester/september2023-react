@@ -2,3 +2,14 @@
     margin: 5vw;
     font-size: 3vw;
 }
+.Field{
+    display: flex;
+    justify-content: start;
+    align-items: end;
+}
+.FieldValue{
+    display: flex;
+    margin-left: 2vw;
+    color: #af1010;
+    font-size: 3.5vw;
+}
