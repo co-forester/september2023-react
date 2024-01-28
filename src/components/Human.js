@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Human = (human) => {
+const Human = ({human}) => {
     const {image, id, name, status, species, gender}=human;
     return (
         <div>

@@ -7,7 +7,7 @@ const Humans = () => {
     useEffect(()=>{
         fetch('https://rickandmortyapi.com/api/character')
             .then(value => value.json())
-            .then(({results})=>setHumans(items))
+            .then(({results})=>setHumans(results))
     }, [])
     return (
         <div>
