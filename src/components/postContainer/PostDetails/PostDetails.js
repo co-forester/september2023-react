@@ -11,7 +11,7 @@ const PostDetails = ({postDetails}) => {
             </div>
             <div className={css.FieldPostDetails}>
                 <div className={css.Field}>userId</div>
-                <div className={css.FieldValue}>{userId}</div>
+                <div className={css.FieldValueUserId}>{userId}</div>
             </div>
             <div className={css.FieldPostDetails}>
                 <div className={css.Field}>title</div>
