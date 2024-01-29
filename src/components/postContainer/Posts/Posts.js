@@ -18,7 +18,7 @@ const Posts = () => {
         postService.getAll().then(({data}) => setPosts(data))
     }, [])
     return (
-        <div>
+        <div className={css.Posts}>
             <div>
                 {posts.map(post => <Post key={post.id} post={post} click={click}/>)}
             </div>
