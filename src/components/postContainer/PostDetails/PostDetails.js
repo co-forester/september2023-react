@@ -4,7 +4,7 @@ import css from './PostDetails.module.css'
 const PostDetails = ({postDetails}) => {
      const {id, title, body, userId} = postDetails
     return (
-        <div className={css.PostDetail}>
+        <div className={css.PostDetails}>
             <div className={css.FieldPostDetails}>
                 <div className={css.Field}>id</div>
                 <div className={css.FieldValue}> {id}</div>

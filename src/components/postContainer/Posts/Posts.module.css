@@ -1,0 +1,7 @@
+body{
+    background: #eeb9a5;
+}
+.Posts{
+    display: flex;
+    justify-content: center;
+}

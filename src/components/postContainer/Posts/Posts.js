@@ -19,12 +19,12 @@ const Posts = () => {
     }, [])
     return (
         <div className={css.Posts}>
+            {
+                postDetails && <PostDetails postDetails = {postDetails}/>
+            }
             <div>
                 {posts.map(post => <Post key={post.id} post={post} click={click}/>)}
             </div>
-            {
-                postDetails ? <PostDetails postDetails = {postDetails}/> : <h1>Not selected</h1>
-            }
         </div>
 
     );

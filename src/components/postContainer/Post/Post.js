@@ -8,11 +8,11 @@ const Post = ({post, click}) => {
    const {id, title} = post;
     return (
         <div className={css.Post}>
-            <div>
+            <div className={css.PostField}>
                 <div className={css.Field}>id</div>
                 <div className={css.FieldValue}>{id}</div>
             </div>
-            <div>
+            <div className={css.PostField}>
                 <div className={css.Field}>title</div>
                 <div className={css.FieldValue}>{title}</div>
             </div>
