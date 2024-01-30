@@ -1,3 +1,13 @@
 .Launch{
-
+    width: calc(14% - 2.2vw);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background: #0f0646;
+    color: aquamarine;
+    padding: .8vw;
+    margin: .2vw;
+}
+.MissionNameLaunch{
+    color: #ffa600;
 }
