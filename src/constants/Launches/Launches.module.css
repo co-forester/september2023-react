@@ -1,3 +1,6 @@
+body{
+    background: grey;
+}
 .Launches{
     display: flex;
     flex-flow: row wrap;

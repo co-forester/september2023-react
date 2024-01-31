@@ -1,7 +1,9 @@
 
+
 import css from './Launch.module.css'
 
-const Launch = ({mission_name, launch_year, links:{mission_patch_small}}) => {
+const Launch = ({launch}) => {
+   const {mission_name, launch_year, links:{mission_patch_small}} = launch;
     return (
         <div className={css.Launch}>
            <div className={css.MissionNameLaunch}>mission_name: {mission_name}</div>
