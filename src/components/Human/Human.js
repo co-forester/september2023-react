@@ -8,7 +8,7 @@ const Human = ({human}) => {
         <div className={css.Human}>
             <img src={image} alt={name}/>
            <div>id: {id}</div>
-           <div>name: {name}</div>
+           <div className={css.Name}>name: {name}</div>
            <div>status: {status}</div>
            <div>species: {species}</div>
            <div>gender: {gender}</div>

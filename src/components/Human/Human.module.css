@@ -1,4 +1,10 @@
+
+
 .Human{
-    margin-left: .5vw
-;
+    margin-left: .5vw;
+}
+.Name{
+    color: red;
+    font-size: 23px;
+    font-family: "Fuggles", cursive;
 }
