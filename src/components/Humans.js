@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+// import React, {useEffect, useState} from 'react';
 
 import {Human} from "./Human";
 import {humans} from '../data/characters'
