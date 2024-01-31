@@ -1,7 +1,8 @@
 // import React, {useEffect, useState} from 'react';
 
-import {Human} from "./Human";
-import {humans} from '../data/characters'
+import {Human} from "../Human/Human";
+import {humans} from '../../data/characters'
+import css from './Humans.module.css'
 
 const Humans = () => {
     // const [humans, setHumans] = useState([]);
@@ -11,7 +12,7 @@ const Humans = () => {
     //         .then(({results})=>setHumans(results))
     // }, [])
     return (
-        <div>
+        <div className={css.Humans} >
             {humans.map(human=><Human key={human.id} human={human}/>)}
         </div>
     )

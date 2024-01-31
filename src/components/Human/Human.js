@@ -1,9 +1,11 @@
 import React from 'react';
 
+import css from './Human.module.css'
+
 const Human = ({human}) => {
     const {image, id, name, status, species, gender}=human;
     return (
-        <div>
+        <div className={css.Human}>
             <img src={image} alt={name}/>
            <div>id: {id}</div>
            <div>name: {name}</div>
