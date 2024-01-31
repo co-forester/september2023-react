@@ -13,8 +13,11 @@ const Launches = () => {
              setLaunches(filtered)})
      }, [])
     return (
+        <div>
+            <h2 className={css.H2}>SpaceX Launches</h2>
         <div className={css.Launches}>
             {launches.map(launch => <Launch key={launch.launch_date_unix} launch={launch}/>)}
+        </div>
         </div>
     );
 };
