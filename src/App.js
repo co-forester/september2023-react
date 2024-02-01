@@ -16,7 +16,6 @@ const App = () => {
     //     setPassword(e.target.value)
     // }
     function onChange(e) {
-        // console.log({[e.target.name]: e.target.value});
         setFormState({...formState, [e.target.name]: e.target.value })
     }
     return (
