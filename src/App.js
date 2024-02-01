@@ -7,6 +7,8 @@ const App = () => {
     function onSubmit(e){
         console.log(e.target.login.value);
         console.log(e.target.password.value);
+
+        // create obj && send to api
         e.preventDefault();
         console.log(formState)
     }
