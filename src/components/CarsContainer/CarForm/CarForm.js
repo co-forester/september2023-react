@@ -1,10 +1,21 @@
 import React from 'react';
+import {useForm} from "react-hook-form";
 
-const CarForm = () => {
+const CarForm = ({setCars}) => {
+
+    const {reset, handleSubmit,register}= useForm();
+
+    const save = (car) => {
+
+    }
+
     return (
-        <div>
-            CarForm
-        </div>
+        <form onSubmit={handleSubmit(save)}>
+            <input type={"number"} placeholder={'id'} {...register('id')}/>
+            <input type={""} placeholder={''} {...register('')}/>
+            <input type={""} placeholder={''} {...register('')}/>
+            <input type={""} placeholder={''} {...register('')}/>
+        </form>
     );
 };
 

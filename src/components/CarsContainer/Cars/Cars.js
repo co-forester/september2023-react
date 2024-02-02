@@ -1,9 +1,11 @@
 import React from 'react';
+import {Car} from "../Car/Car";
 
-const Cars = () => {
+const Cars = ({cars}) => {
+
     return (
         <div>
-            Cars
+            {cars.map(car=><Car key={car.id} car={car}/>)}
         </div>
     );
 };

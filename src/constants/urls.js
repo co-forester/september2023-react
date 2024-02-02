@@ -2,10 +2,10 @@ const baseURL = 'http://owu.linkpc.net/carsAPI/v1';
 
 const cars = '/cars';
 
-const urls ={
+const urls = {
     cars:{
         base: cars,
-        byId: `${cars/${id}`
+        byId:(id) => `${cars}/${id}`
     }
 }
 
