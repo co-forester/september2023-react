@@ -1,6 +1,6 @@
 const baseURL = 'https://jsonplaceholder.typicode.com'
 
-const users = '/user';
+const users = '/users';
 const comments = '/comments';
 
 const urls = {
