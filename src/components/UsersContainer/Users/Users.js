@@ -1,9 +1,10 @@
 import React from 'react';
-import {User} from "../User/User";
 
+import {User} from "../User/User";
+import css from './Users.module.css'
 const Users = ({users}) => {
     return (
-        <div>
+        <div className={css.Users}>
             {users.map(user=><User key={user.id} user={user}/>)}
         </div>
     );

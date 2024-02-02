@@ -1,0 +1,17 @@
+.App{
+    background: #d8eff8;
+    display: flex;
+    justify-content: space-around;
+}
+.AppUsersContainer{
+    width: 30%;
+    display: flex;
+    background: whitesmoke;
+    margin: 1vw;
+}
+.AppCommentsContainer{
+    width: 70%;
+    display: flex;
+    background: whitesmoke;
+    margin: 1vw 1vw 1vw 0;
+}

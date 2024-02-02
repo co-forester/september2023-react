@@ -1,0 +1,9 @@
+.UserForm{
+    background: #fafad0;
+    padding: 1vw;
+}
+.DivButton{
+    display: flex;
+    justify-content: end;
+    margin-right: 4vw;
+}

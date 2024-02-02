@@ -1,0 +1,12 @@
+.CommentForm{
+background: #fafad0;
+    padding: 1vw;
+}
+.DivButton{
+    display: flex;
+    justify-content: end;
+    margin-right: 4vw;
+}
+button{
+    box-shadow: 4px 4px 4px #ec7373;
+}
