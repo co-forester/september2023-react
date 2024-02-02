@@ -5,12 +5,13 @@ const App = () => {
     // const [password, setPassword] = useState();
     const [formState, setFormState] = useState({login: '', password: ''})
     function onSubmit(e){
-        console.log(e.target.login.value);
-        console.log(e.target.password.value);
-
-        // create obj && send to api
         e.preventDefault();
-        console.log(formState)
+        // console.log(e.target)
+        // console.log(e.target.login.value);
+        // console.log(e.target.password.value);
+        // create obj && send to api
+        // console.log(formState);
+        // e.target.reset()
     }
     // function onLoginChange(e){
     //     setLogin(e.target.value)
@@ -23,9 +24,9 @@ const App = () => {
     return (
         <div>
            <form onSubmit={onSubmit}>
-               <input type={"text"} name={'login'} value={formState.login} onChange={onChange}/>
-               <input type={"text"} name={'password'} value={formState.password} onChange={onChange}/>
-               <button>submit</button>
+               <input type={"text"} name={'login'} value={formState.login} onChange={onChange} placeholder={'введить ім`я'}/>
+               <input type={"text"} name={'password'} value={formState.password} onChange={onChange} placeholder={'введить пароль'}/>
+               <button>збережити</button>
            </form>
         </div>
     );
