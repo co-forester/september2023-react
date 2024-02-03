@@ -2,6 +2,7 @@ import React from 'react';
 
 import {carService} from "../../../services/carService";
 import css from './Car.module.css'
+import {isDisabled} from "@testing-library/user-event/dist/utils";
 
 const Car = ({car, setTrigger}) => {
    const {id, brand, price, year} = car;
