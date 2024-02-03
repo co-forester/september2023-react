@@ -1,7 +1,11 @@
 import React from 'react';
+import {carService} from "../../../services/carService";
 
 const Car = ({car}) => {
-   const {id, brand, price, year} = car
+   const {id, brand, price, year} = car;
+
+
+
     return (
         <div>
             <div>id:{id}</div>
