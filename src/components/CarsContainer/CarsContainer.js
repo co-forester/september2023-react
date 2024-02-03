@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+
 import {carService} from "../../services/carService";
 import {CarForm} from "./CarForm/CarForm";
 import {Cars} from "./Cars/Cars";
@@ -13,6 +14,7 @@ const CarsContainer = () => {
     return (
         <div>
             <CarForm setCars={setCars}/>
+            <hr/>
             <hr/>
             <Cars cars={cars}/>
         </div>
