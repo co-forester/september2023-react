@@ -8,6 +8,8 @@ const Car = ({car}) => {
             <div>brand:{brand}</div>
             <div>price:{price}</div>
             <div>year:{year}</div>
+            <button>delete</button>
+            <hr/>
             <hr/>
         </div>
     );

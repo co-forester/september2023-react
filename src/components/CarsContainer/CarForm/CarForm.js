@@ -18,7 +18,10 @@ const CarForm = ({setCars}) => {
             <input type={"text"} placeholder={'brand'} {...register('brand')}/>
             <input type={"number"} placeholder={'price'} {...register('price')}/>
             <input type={"number"} placeholder={'year'} {...register('year')}/>
-            <button>save</button>
+            <div>
+                <button>save</button>
+                <button>update</button>
+            </div>
         </form>
     );
 };
