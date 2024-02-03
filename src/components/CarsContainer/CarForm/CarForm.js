@@ -2,7 +2,7 @@ import React from 'react';
 import {useForm} from "react-hook-form";
 
 import {carService} from "../../../services/carService";
-
+import  css from './CarForm.module.css'
 const CarForm = ({setTrigger}) => {
 
     const {reset, handleSubmit,register}= useForm();
@@ -14,13 +14,12 @@ const CarForm = ({setTrigger}) => {
     }
 
     return (
-        <form onSubmit={handleSubmit(save)}>
-            <input type={"text"} placeholder={'brand'} {...register('brand')}/>
-            <input type={"number"} placeholder={'price'} {...register('price')}/>
-            <input type={"number"} placeholder={'year'} {...register('year')}/>
+        <form onSubmit={handleSubmit(save)} className={css.CarForm}>
+            <input  className={css.Input} type={"text"} placeholder={'brand'} {...register('brand')}/>
+            <input className={css.Input} type={"number"} placeholder={'price'} {...register('price')}/>
+            <input className={css.Input} type={"number"} placeholder={'year'} {...register('year')}/>
             <div>
-                <button>save</button>
-                <button>update</button>
+                <button className={css.ButSave}>save</button>
             </div>
         </form>
     );

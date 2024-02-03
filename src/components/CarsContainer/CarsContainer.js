@@ -3,6 +3,7 @@ import React, {useEffect, useState} from 'react';
 import {carService} from "../../services/carService";
 import {CarForm} from "./CarForm/CarForm";
 import {Cars} from "./Cars/Cars";
+import css from './CarsContainer.module.css'
 
 const CarsContainer = () => {
     const [cars, setCars] = useState([]);
@@ -13,11 +14,9 @@ const CarsContainer = () => {
     }, [trigger])
 
     return (
-        <div>
+        <div className={css.CarsContainer}>
             <CarForm setTrigger={setTrigger}/>
-            <hr/>
-            <hr/>
-            <Cars cars={cars}/>
+            <Cars cars={cars} setTrigger={setTrigger}/>
         </div>
     );
 };
