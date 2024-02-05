@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 
 import {carService} from "../../services/carService";
 import {CarForm} from "./CarForm/CarForm";
@@ -7,16 +7,21 @@ import css from './CarsContainer.module.css'
 
 const CarsContainer = () => {
     const [cars, setCars] = useState([]);
-    const [trigger, setTrigger] = useState(null);
+    const [flag, setFlag] = useState(null);
+    const [carForUpdate, setCarForUpdate] = useState(null);
+
+    const trigger = () => {
+        setFlag (prev => !prev)
+    }
 
     useEffect(() => {
         carService.getAll().then(({data}) => setCars(data))
-    }, [trigger])
+    }, [flag])
 
     return (
         <div className={css.CarsContainer}>
-            <CarForm setTrigger={setTrigger}/>
-            <Cars cars={cars} setTrigger={setTrigger}/>
+            <CarForm trigger={trigger} carForUpdate={carForUpdate} setCarForUpdate={setCarForUpdate}/>
+            <Cars cars={cars} trigger={trigger} setCarForUpdate={setCarForUpdate}/>
         </div>
     );
 };

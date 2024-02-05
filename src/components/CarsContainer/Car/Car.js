@@ -1,21 +1,18 @@
-import React from 'react';
+
 
 import {carService} from "../../../services/carService";
 import css from './Car.module.css'
-import {isDisabled} from "@testing-library/user-event/dist/utils";
 
-const Car = ({car, setTrigger}) => {
+
+const Car = ({car, trigger, setCarForUpdate}) => {
    const {id, brand, price, year} = car;
 
-   const Update = async (id, car) => {
-       await carService.updateById(id, car);
-       setTrigger (prev => !prev)
-   }
 
    const Delete = async () => {
      await carService.delete(id);
-       setTrigger (prev => !prev)
+      trigger()
    }
+
 
     return (
         <div className={css.Car}>
@@ -24,7 +21,7 @@ const Car = ({car, setTrigger}) => {
             <div>price:{price}</div>
             <div>year:{year}</div>
             <div className={css.Buttons}>
-                <button className={css.ButUpdate} onClick={Update}>update</button>
+                <button className={css.ButUpdate} onClick={()=>setCarForUpdate(car)}>update</button>
                 <button className={css.ButDelete} onClick={Delete}>delete</button>
             </div>
         </div>
