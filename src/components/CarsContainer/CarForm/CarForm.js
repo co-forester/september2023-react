@@ -9,7 +9,7 @@ import {useEffect} from "react";
 import {joiResolver} from "@hookform/resolvers/joi";
 import {carValidator} from "../../../validators/carValidator";
 
-const CarForm = ({trigger, carForUpdate}) => {
+const CarForm = ({trigger, carForUpdate, setCarForUpdate}) => {
 
     const {reset, handleSubmit, register, formState: {isValid, errors}, setValue} = useForm({mode: 'all', resolver: joiResolver(carValidator)});
 
@@ -23,12 +23,13 @@ const CarForm = ({trigger, carForUpdate}) => {
 
     const Save = async (car) => {
          await carService.create(car);
-        trigger()
+        trigger();
         reset()
     }
     const Update = async (car) => {
          await carService.updateById(carForUpdate.id, car);
-        trigger()
+        trigger();
+        setCarForUpdate(null);
         reset()
     }
 
