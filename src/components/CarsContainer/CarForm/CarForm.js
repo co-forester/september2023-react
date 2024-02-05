@@ -1,45 +1,52 @@
-import React from 'react';
+
 import {useForm} from "react-hook-form";
+
 
 import {carService} from "../../../services/carService";
 import  css from './CarForm.module.css'
-const CarForm = ({setTrigger}) => {
 
-    const {reset, handleSubmit,
-        register, formState: {isValid, errors}}= useForm({mode: 'all'});
+import {useEffect} from "react";
+import {joiResolver} from "@hookform/resolvers/joi";
+import {carValidator} from "../../../validators/carValidator";
 
-    const save = async (car) => {
-        const {data} = await carService.create(car);
-        setTrigger (prev => !prev)
+const CarForm = ({trigger, carForUpdate}) => {
+
+    const {reset, handleSubmit, register, formState: {isValid, errors}, setValue} = useForm({mode: 'all', resolver: joiResolver(carValidator)});
+
+    useEffect(()=>{
+        if (carForUpdate){
+            setValue('brand', carForUpdate.brand, {shouldValidate: true});
+            setValue('price', carForUpdate.price, {shouldValidate: true});
+            setValue('year', carForUpdate.year, {shouldValidate: true});
+        }
+    }, [carForUpdate, setValue])
+
+    const Save = async (car) => {
+         await carService.create(car);
+        trigger()
+        reset()
+    }
+    const Update = async (car) => {
+         await carService.updateById(carForUpdate.id, car);
+        trigger()
         reset()
     }
 
+
     return (
-        <>
-            <form onSubmit={handleSubmit(save)} className={css.CarForm}>
-            <input  className={css.Input} type={"text"} placeholder={'brand'} {...register('brand', {
-                // minLength:{value: 1, message: 'min 1 character'},
-                // maxLength:{value: 20, message: 'max 20 characters'},
-                pattern:{value:/^[a-zA-Zа-яА-яёЁіІїЇ]{1,20}$/, message: 'only letters, min 1 character, max 20 characters'}
-            })}/>
-            <input className={css.Input} type={"number"} placeholder={'price'} {...register('price', {
-                min:{value: 0, message: 'min 0'},
-                max:{value:1_000_000, message: 'max 1 000 000'},
-                valueAsNumber: true
-            })}/>
-            <input className={css.Input} type={"number"} placeholder={'year'} {...register('year', {
-                min:{value:1990, message: 'min year 1990'},
-                max:{value:2023, message: 'max year 2023'},
-                valueAsNumber: true
-            })}/>
-            <div>
-                <button className={css.ButSave} disabled={!isValid}>save</button>
-            </div>
-        </form>
-            {errors.brand && <div>{errors.brand.message}</div>}
-            {errors.price && <div>{errors.price.message}</div>}
-            {errors.year && <div>{errors.year.message}</div>}
-        </>
+        <div>
+            <form onSubmit={handleSubmit(carForUpdate ? Update : Save)} className={css.CarForm}>
+                <input  className={css.Input} type={"text"} placeholder={'brand'} {...register('brand')}/>
+                <input className={css.Input} type={"number"} placeholder={'price'} {...register('price', {valueAsNumber: true})}/>
+                <input className={css.Input} type={"number"} placeholder={'year'} {...register('year', {valueAsNumber: true})}/>
+                <div>
+                    <button className={css.ButSave} disabled={!isValid} > {carForUpdate ? 'Update': 'Save'}</button>
+                </div>
+            </form>
+            {errors.brand && <div>brand: {errors.brand.message}</div>}
+            {errors.year && <div>year: {errors.year.message}</div>}
+            {errors.price && <div>price: {errors.price.message}</div>}
+        </div>
     );
 };
 
