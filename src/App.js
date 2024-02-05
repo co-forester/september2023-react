@@ -1,5 +1,5 @@
 import React from 'react';
-import {Launches} from "./constants/Launches/Launches";
+import {Launches} from "./components/Launches/Launches";
 
 const App = () => {
     return (
