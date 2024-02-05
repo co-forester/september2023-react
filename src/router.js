@@ -1,17 +1,18 @@
-import {createBrowserRouter} from "react-router-dom";
+import {createBrowserRouter, Navigate} from "react-router-dom";
 
-import {HomePage} from "./pages/HomePage";
-import {HelloPage} from "./pages/HelloPage";
+import {MainLayout} from "./layout/MainLayout";
+import {UsersPage} from "./pages/UsersPage";
+import {CommentsPages} from "./pages/CommentsPages";
 
 const router =createBrowserRouter([
     {
-        path: '', element: <HomePage/>
+        path: '', element: <MainLayout/>, children: [
+            {index:true, element: <Navigate to={'users'}/>},
+            {path: 'users', element: <UsersPage/>},
+            {path: 'comments', element: <CommentsPages/>}
+        ]
     },
-    {
-        path: 'hello', element: <HelloPage/>
-    }
+
 ]);
 
-export {
-    router
-}
+export {router}
