@@ -44,9 +44,9 @@ const CarForm = ({trigger, carForUpdate, setCarForUpdate}) => {
                     <button className={css.ButSave} disabled={!isValid} > {carForUpdate ? 'Update': 'Save'}</button>
                 </div>
             </form>
-            {errors.brand && <div>brand: {errors.brand.message}</div>}
-            {errors.year && <div>year: {errors.year.message}</div>}
-            {errors.price && <div>price: {errors.price.message}</div>}
+            {errors.brand && <div className={css.ErrorMessage}>brand: {errors.brand.message}</div>}
+            {errors.year && <div className={css.ErrorMessage}>year: {errors.year.message}</div>}
+            {errors.price && <div className={css.ErrorMessage}>price: {errors.price.message}</div>}
         </div>
     );
 };
