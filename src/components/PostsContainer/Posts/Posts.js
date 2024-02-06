@@ -1,9 +1,18 @@
+import {useEffect, useState} from "react";
+import {Post} from "../Post/Post";
+import {postService} from "../../../services/postService";
 
 
-const Posts = () => {
+const Posts = ({userId}) => {
+    const [posts, setPosts] = useState([]);
+
+    useEffect(()=>{
+        postService.getByUserId(userId).then(({data})=>setPosts(data))
+    }, [userId])
+
     return (
         <div>
-            Posts
+            {posts.map(post=><Post key={post.id} post={post}/>)}
         </div>
     );
 };

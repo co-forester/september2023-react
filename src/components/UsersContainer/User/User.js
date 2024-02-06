@@ -1,7 +1,11 @@
+import {useNavigate} from "react-router-dom";
 
 
 const User = ({user}) => {
   const {id, name, username, email} = user;
+
+
+  const navigate = useNavigate()
 
     return (
         <div>
@@ -9,7 +13,7 @@ const User = ({user}) => {
             <div>name: {name}</div>
             <div>username: {username}</div>
             <div>email: {email}</div>
-            <button>getPosts</button>
+            <button onClick={()=>navigate('posts', {state: id})}>getPosts</button>
         </div>
     );
 };

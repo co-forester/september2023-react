@@ -1,9 +1,13 @@
 
 
-const Post = () => {
+const Post = ({post}) => {
+    const {id, userId, title, body} = post;
     return (
         <div>
-            Post
+            <div>id: {id}</div>
+            <div>userId: {userId}</div>
+            <div>title: {title}</div>
+            <div>body: {body}</div>
         </div>
     );
 };
