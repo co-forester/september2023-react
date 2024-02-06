@@ -4,7 +4,6 @@
     padding: 30px;
 }
 .Input{
-
     margin-left: 10px;
     margin-right: 10px;
     outline: solid #84ab84;
@@ -17,5 +16,4 @@
     display: flex;
     justify-content: center;
     color: #fc0a02;
-
 }

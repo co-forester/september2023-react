@@ -1,13 +1,10 @@
-
 import {useForm} from "react-hook-form";
-
-
-import {carService} from "../../../services/carService";
-import  css from './CarForm.module.css'
-
 import {useEffect} from "react";
 import {joiResolver} from "@hookform/resolvers/joi";
+
+import {carService} from "../../../services/carService";
 import {carValidator} from "../../../validators/carValidator";
+import  css from './CarForm.module.css'
 
 const CarForm = ({trigger, carForUpdate, setCarForUpdate}) => {
 

@@ -1,5 +1,3 @@
-
-
 import {Car} from "../Car/Car";
 import css from './Cars.module.css'
 

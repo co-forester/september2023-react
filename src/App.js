@@ -1,5 +1,3 @@
-
-
 import {CarsContainer} from "./components/CarsContainer/CarsContainer";
 
 const App = () => {

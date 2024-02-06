@@ -13,6 +13,5 @@ const carValidator = Joi.object({
         'number.max': 'hoho, max current year '
     })
 })
-export {
-    carValidator
-}
+
+export {carValidator}
