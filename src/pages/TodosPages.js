@@ -1,9 +1,10 @@
+import {TodosContainer} from "../components/TodosContainers/TodosContainer";
 
 
 const TodosPages = () => {
     return (
         <div>
-            TodosPages
+            <TodosContainer/>
         </div>
     );
 };
