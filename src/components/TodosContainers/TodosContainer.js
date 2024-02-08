@@ -1,8 +1,9 @@
+import {Todos} from "./Todos/Todos";
 
 const TodosContainer = () => {
     return (
         <div>
-            TodosContainer
+            <Todos/>
         </div>
     );
 };
