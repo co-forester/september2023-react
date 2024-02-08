@@ -1,6 +1,8 @@
 import {axiosService} from "./axiosService";
 import {urls} from "../constants/urls";
 
-const  todoService = axiosService.get(urls.todos);
+const  todoService = {
+    getAll:() => axiosService.get(urls.todos)
+};
 
 export {todoService}

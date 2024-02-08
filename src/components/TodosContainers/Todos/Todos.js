@@ -1,9 +1,17 @@
+import {useEffect, useState} from "react";
+import {todoService} from "../../../services/TodoService";
+import {Todo} from "../Todo/Todo";
 
 
 const Todos = () => {
+    const [todos, setTodos] = useState([]);
+
+    useEffect(()=>{
+        todoService.getAll().then(({data})=>setTodos(data))
+    }, [])
     return (
         <div>
-            Todos
+            {todos.map(todo=><Todo key={todo.id} todo={todo}/>)}
         </div>
     );
 };

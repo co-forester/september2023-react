@@ -1,4 +1,5 @@
 import {useEffect, useState} from "react";
+
 import {albumService} from "../../../services/AlbumService";
 import {Album} from "../Album/Album";
 
@@ -11,7 +12,7 @@ const Albums = () => {
     }, [])
     return (
         <div>
-            {albums.map(album=><Album key={album.id} album={album}/>)}
+            {albums.map(album => <Album key={album.id} album={album}/>)}
         </div>
     );
 };

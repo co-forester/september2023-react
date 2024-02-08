@@ -1,4 +1,4 @@
-import React from 'react';
+
 import {AlbumsContainer} from "../components/AlbumsContainer/AlbumsContainer";
 
 const AlbumsPages = () => {
