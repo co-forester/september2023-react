@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
-import {commentService} from "../../../services/CommentService";
+
+import {commentService} from "../../../services/commentService";
 import {Comment} from "../Comment/Comment";
 
 
@@ -8,14 +9,11 @@ const Comments = () => {
 
     useEffect(()=>{
         commentService.getAll().then(({data})=>setComments(data))
-    }, [])
+    }, []);
     // console.log(comments)
-    const post = ()=>{
-
-    }
 
     return (
-        <div onClick={post}>
+        <div>
             {comments.map(comment=><Comment key={comment.id} comment={comment}/>)}
         </div>
     );

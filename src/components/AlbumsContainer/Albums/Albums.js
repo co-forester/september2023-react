@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 
-import {albumService} from "../../../services/AlbumService";
+import {albumService} from "../../../services/albumService";
 import {Album} from "../Album/Album";
 
 

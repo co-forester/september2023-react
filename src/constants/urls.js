@@ -8,11 +8,11 @@ const posts = '/posts';
 const urls = {
     todos,
     albums,
-    comments: {
+    comments,
+    posts: {
         base: posts,
         byPostId: (postId) => `/posts/${postId}`
-    },
-    posts
+    }
 }
 
 export {baseURL, urls}

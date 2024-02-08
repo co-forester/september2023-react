@@ -1,9 +1,9 @@
-import React from 'react';
+import {PostContainer} from "../components/PostContainer/PostContainer";
 
 const PostsPages = () => {
     return (
         <div>
-            PostsPages
+            <PostContainer/>
         </div>
     );
 };
