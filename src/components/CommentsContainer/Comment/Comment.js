@@ -6,7 +6,7 @@ const Comment = ({comment}) => {
     const navigate= useNavigate();
 
     return (
-        <div className={} onClick={()=>navigate('post', {state:{postId}})}>
+        <div className={css.Comment} onClick={()=>navigate('post', {state:{postId}})}>
             <div>postId: {postId}</div>
             <div>id: {id}</div>
             <div>name: {name}</div>
