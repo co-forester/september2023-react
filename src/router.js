@@ -3,6 +3,7 @@ import {createBrowserRouter, Navigate} from "react-router-dom";
 import {AlbumsPages} from "./pages/AlbumsPages";
 import {TodosPages} from "./pages/TodosPages";
 import {CommentsPages} from "./pages/CommentsPages";
+import {MainLayout} from "./layouts/MainLayout";
 
 const router =createBrowserRouter([
     {
