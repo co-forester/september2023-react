@@ -19,11 +19,13 @@ const App = () => {
     //     setPassword(e.target.value)
     // }
     function onChange(e) {
-        setFormState({...formState, [e.target.name]: e.target.value })
+        setFormState({...formState, [e.target.name]: e.target.value });
+        console.log(e.target.value, e.target.name )
     }
+
     return (
         <div>
-           <form onSubmit={onSubmit}>
+           <form  name={11} onSubmit={onSubmit}>
                <input type={"text"} name={'login'} value={formState.login} onChange={onChange} placeholder={'введить ім`я'}/>
                <input type={"text"} name={'password'} value={formState.password} onChange={onChange} placeholder={'введить пароль'}/>
                <button>збережити</button>
