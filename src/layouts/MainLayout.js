@@ -2,9 +2,11 @@ import React from 'react';
 import {Header} from "../components/Header";
 import {Outlet} from "react-router-dom";
 
+import css from './MainLayout.module.css'
+
 const MainLayout = () => {
     return (
-        <div>
+        <div className={css.MainLayout}>
             <Header/>
             <Outlet/>
         </div>
