@@ -10,12 +10,12 @@ const UserContainer = () => {
     const {state:{id}} = useLocation();
     const [user, setUser] = useState(null);
 
-    useEffect(() => {
-        userService.getById(id).then(({data}) => setUser(data))
+    useEffect(async () => {
+       await userService.getById(id).then(({data}) => setUser(data))
     }, [id])
 
-    useEffect(() => {
-        userService.getAll().then(({data}) => setUsers(data))
+    useEffect(async () => {
+        await userService.getAll().then(({data}) => setUsers(data))
     }, [])
 
     return (
