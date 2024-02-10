@@ -1,8 +1,8 @@
-import {useLocation} from "react-router-dom";
 
-const UserDetails = () => {
-   const {state:{id}} = useLocation()
 
+const UserDetails = ({user}) => {
+
+const {id, name, } = user
 
     return (
         <div>
