@@ -1,7 +1,7 @@
 const Post = () => {
     return (
         <div>
-            Post
+            <Post/>
         </div>
     );
 };

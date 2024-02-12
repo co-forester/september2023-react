@@ -1,7 +1,9 @@
+import {PostContainer} from "../components/PostContainer/PostContainer";
+
 const PostPages = () => {
     return (
         <div>
-            PostPages
+            <PostContainer/>
         </div>
     );
 };

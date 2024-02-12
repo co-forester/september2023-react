@@ -1,14 +1,11 @@
-import {useLocation} from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom";
 
 
 
 const UserDetails = () => {
     const {state:{user}} = useLocation();
     const {id, name, username, email, phone, website} = user
-   // useEffect(() => {
-   //
-   // }, [user])
-
+    const navigate = useNavigate();
     return (
         <div>
             {user && <div>
@@ -18,7 +15,7 @@ const UserDetails = () => {
                 <div>email: {email}</div>
                 <div>phone: {phone}</div>
                 <div>website: {website}</div>
-
+                <button onClick={()=>navigate('posts', {state:{id}})}>posts</button>
             </div>}
         </div>
     );
