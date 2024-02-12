@@ -1,5 +1,6 @@
 import {useNavigate} from "react-router-dom";
 
+
 const User = ({user}) => {
     const {id, name} = user
 
@@ -9,7 +10,7 @@ const User = ({user}) => {
         <div>
            <div>id: {id}</div>
            <div>name: {name}</div>
-            <button onClick={()=>navigate('userDetails',{state:{user}})}>user detail</button>
+            <button onClick={()=>navigate('/userDetails',{state:{user}})}>user detail</button>
         </div>
     );
 };
