@@ -5,7 +5,6 @@ const UsersPages = () => {
 
     return (
         <div>
-            <Outlet/>
             <UserContainer/>
         </div>
     );

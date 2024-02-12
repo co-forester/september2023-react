@@ -4,6 +4,7 @@ import {useLocation, useNavigate} from "react-router-dom";
 
 const UserDetails = () => {
     const {state:{user}} = useLocation();
+    console.log(user);
     const {id, name, username, email, phone, website} = user
     const navigate = useNavigate();
     return (
@@ -15,7 +16,7 @@ const UserDetails = () => {
                 <div>email: {email}</div>
                 <div>phone: {phone}</div>
                 <div>website: {website}</div>
-                <button onClick={()=>navigate('posts', {state:{id}})}>posts</button>
+                <button onClick={() => navigate('posts', {state: {id}})}>posts</button>
             </div>}
         </div>
     );

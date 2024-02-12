@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 
 import {userService} from "../../services/userService";
 import {Users} from "./Users/Users";
+import {Outlet} from "react-router-dom";
 
 
 const UserContainer = () => {
@@ -15,6 +16,7 @@ const UserContainer = () => {
 
     return (
         <div>
+            <Outlet/>
             <Users users={users}/>
         </div>
     );

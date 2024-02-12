@@ -6,10 +6,12 @@ const posts = '/posts'
 const urls = {
     users:{
         base: users,
-        byId: (idUser) => `${users}/${idUser}`
+        byId: (idUser) => `${users}/${idUser}`,
+        postsByUserId: (id) => `${users}/${id}/posts`
     },
     posts:{
         base: posts,
+        postById: () => ``
 
     }
 }
