@@ -1,5 +1,7 @@
 import {useNavigate} from "react-router-dom";
+
 import  css from './Comment.module.css'
+
 const Comment = ({comment}) => {
     const {postId, id, name, email, body} = comment
 

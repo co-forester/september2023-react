@@ -1,4 +1,3 @@
-
 import {AlbumsContainer} from "../components/AlbumsContainer/AlbumsContainer";
 
 const AlbumsPages = () => {
