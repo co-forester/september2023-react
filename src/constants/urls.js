@@ -8,7 +8,7 @@ const urls = {
     users:{
         base: users,
         byId: (idUser) => `${users}/${idUser}`,
-        postsUserId: (id) => `${users}/${id}/posts`
+        postsUserId: (idUser)=> `${users}/${idUser}/posts`
     },
     // posts:{
     //     base: posts,
