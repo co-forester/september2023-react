@@ -7,8 +7,8 @@ const CommentContainer = ({id}) => {
     console.log(id)
     const [comments, setComments] = useState([]);
 
-    useEffect(async () => {
-        await commentService.getCommentsByPostId(id).then(({data})=>setComments(data))
+    useEffect( () => {
+       commentService.getCommentsByPostId(id).then(({data})=>setComments(data))
     }, [id])
 
     return (

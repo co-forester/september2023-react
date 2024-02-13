@@ -7,11 +7,13 @@ const PostDetails = () => {
     console.log(post);
     return (
         <div>
-          <div>id: {id}</div>
-          <div>userId: {userId}</div>
-          <div>title: {title}</div>
-          <div>body: {body}</div>
-            <button onClick={()=>navigate('/comments', {state:{id}})}>comments</button>
+            {post && <div>
+                <div>id: {id}</div>
+                <div>userId: {userId}</div>
+                <div>title: {title}</div>
+                <div>body: {body}</div>
+                <button onClick={() => navigate('/comments', {state: {id}})}>comments</button>
+            </div>}
         </div>
     );
 };

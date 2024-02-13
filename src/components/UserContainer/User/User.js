@@ -11,6 +11,7 @@ const User = ({user}) => {
            <div>id: {id}</div>
            <div>name: {name}</div>
             <button onClick={()=>navigate('/userDetails',{state:{user}})}>user details</button>
+            <hr/>
         </div>
     );
 };

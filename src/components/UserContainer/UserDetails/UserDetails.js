@@ -1,7 +1,5 @@
 import {useLocation, useNavigate} from "react-router-dom";
 
-
-
 const UserDetails = () => {
     const {state:{user}} = useLocation();
     console.log(user);
