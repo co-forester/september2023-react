@@ -5,7 +5,6 @@ const UserPost = ({post}) => {
     const navigate = useNavigate()
     return (
         <div>
-           <div>postId: {id}</div>
            <div>title: {title}</div>
             <button onClick={()=>navigate('/postDetails', {state:{post}})}>post details</button>
             <hr/>

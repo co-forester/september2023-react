@@ -1,4 +1,4 @@
-import {useLocation, useNavigate} from "react-router-dom";
+import {Outlet, useLocation, useNavigate} from "react-router-dom";
 
 const PostDetails = () => {
    const{state:{post}} = useLocation();
@@ -7,6 +7,7 @@ const PostDetails = () => {
     console.log(post);
     return (
         <div>
+            <Outlet/>
             {post && <div>
                 <div>id: {id}</div>
                 <div>userId: {userId}</div>
