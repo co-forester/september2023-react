@@ -17,9 +17,9 @@ const router = createBrowserRouter([
             {path: 'users', element: <UsersPages/>},
             {path: 'userDetails',element: <UserDetails/>},
             {path: 'userPosts', element: <UserPosts/>},
-            {path: 'postDetails', element: <PostDetails/>, children: [
-                            {path: 'comments', element: <CommentPages/>}
-                        ]}
+            {path: 'postDetails', element: <PostDetails/>},
+            {path: 'comments', element: <CommentPages/>}
+
 
         ]
     }

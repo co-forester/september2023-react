@@ -1,11 +1,14 @@
 import {useEffect, useState} from "react";
+
 import {Comments} from "./Comments/Comments";
+import {commentService} from "../../services/commentService";
 
 const CommentContainer = ({id}) => {
-    const [comments, setComments] = useState();
+    console.log(id)
+    const [comments, setComments] = useState([]);
 
-    useEffect(() => {
-
+    useEffect(async () => {
+        await commentService.getCommentsByPostId(id).then(({data})=>setComments(data))
     }, [id])
 
     return (
