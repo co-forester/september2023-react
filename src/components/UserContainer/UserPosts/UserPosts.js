@@ -1,7 +1,8 @@
 import {useEffect, useState} from "react";
 import {useLocation} from "react-router-dom";
-import {userService} from "../../../services/userService";
+
 import {UserPost} from "../UserPost/UserPost";
+import {postService} from "../../../services/postService";
 
 const UserPosts = () => {
     const [posts, setPosts] = useState([])
@@ -11,7 +12,7 @@ const UserPosts = () => {
     console.log(posts)
 
     useEffect(() => {
-        userService.postsByUserId(id).then(({data})=> setPosts(data))
+        postService.getPostsByUserId(id).then(({data})=> setPosts(data))
     }, [id]);
 
     return (
