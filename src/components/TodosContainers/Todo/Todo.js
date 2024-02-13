@@ -2,6 +2,7 @@ import css from './Todo.module.css'
 
 const Todo = ({todo}) => {
     const {userId, id, title, completed} = todo;
+    console.log(todo)
 
     return (
         <div className={css.Todo}>
