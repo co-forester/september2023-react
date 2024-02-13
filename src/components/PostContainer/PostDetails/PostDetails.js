@@ -1,12 +1,17 @@
-import {useLocation} from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom";
 
 const PostDetails = () => {
-      const {state:{postId}}= useLocation()
-    console.log(postId);
-
+   const{state:{post}} = useLocation();
+   const {id, userId, title, body} = post
+   const navigate = useNavigate()
+    console.log(post);
     return (
         <div>
-            PostDetails
+          <div>id: {id}</div>
+          <div>userId: {userId}</div>
+          <div>title: {title}</div>
+          <div>body: {body}</div>
+            <button onClick={()=>navigate('comments', {state:{id}})}>comments</button>
         </div>
     );
 };
