@@ -11,7 +11,7 @@ const PostDetails = () => {
           <div>userId: {userId}</div>
           <div>title: {title}</div>
           <div>body: {body}</div>
-            <button onClick={()=>navigate('comments', {state:{id}})}>comments</button>
+            <button onClick={()=>navigate('/comments', {state:{id}})}>comments</button>
         </div>
     );
 };

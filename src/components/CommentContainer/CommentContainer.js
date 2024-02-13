@@ -1,7 +1,16 @@
-const CommentContainer = () => {
+import {useEffect, useState} from "react";
+import {Comments} from "./Comments/Comments";
+
+const CommentContainer = ({id}) => {
+    const [comments, setComments] = useState();
+
+    useEffect(() => {
+
+    }, [id])
+
     return (
         <div>
-            CommentContainer
+            <Comments comments={comments}/>
         </div>
     );
 };

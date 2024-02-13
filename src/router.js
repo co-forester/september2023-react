@@ -8,6 +8,8 @@ import {CommentPages} from "./pages/CommentPages";
 import {ErrorPage} from "./pages/ErrorPage";
 import {UserPosts} from "./components/UserContainer/UserPosts/UserPosts";
 
+
+
 const router = createBrowserRouter([
     {
         path: '', element: <MainLayout/>, errorElement: <ErrorPage/> , children: [

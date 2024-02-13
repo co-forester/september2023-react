@@ -1,12 +1,11 @@
-import {useLocation} from "react-router-dom";
 import {useEffect, useState} from "react";
-
+import {useLocation} from "react-router-dom";
 import {userService} from "../../../services/userService";
 import {UserPost} from "../UserPost/UserPost";
 
 const UserPosts = () => {
     const [posts, setPosts] = useState([])
-   const {state:{id}} = useLocation();
+    const {state:{id}} = useLocation();
 
     console.log(id)
     console.log(posts)
@@ -17,7 +16,7 @@ const UserPosts = () => {
 
     return (
         <div>
-           {posts.map(post=> <UserPost key={post.id} post={post}/>)}
+            {posts.map(post=> <UserPost key={post.id} post={post}/>)}
         </div>
     );
 };

@@ -1,7 +1,7 @@
 import {useNavigate} from "react-router-dom";
 
 const UserPost = ({post}) => {
-    const {id, userId, title, body} = post
+    const {id, title} = post
     const navigate = useNavigate()
     return (
         <div>
