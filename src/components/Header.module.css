@@ -1,9 +1,11 @@
 .Header{
     background: chocolate;
-
+    margin-bottom: 13px;
     padding: 10px;
 }
 .NavLink{
+    margin-left: 66px;
     text-decoration: none;
     color: #fcfcd5;
+    font-size: 22px;
 }

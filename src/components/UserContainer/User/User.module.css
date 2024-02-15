@@ -1,0 +1,14 @@
+.User{
+    width: 300px;
+    margin-left: 66px;
+}
+.Name{
+    display: flex;
+    align-items: end;
+    margin-bottom: 13px;
+}
+.NameValue{
+    font-size: 23px;
+    margin-left: 7px;
+    color: darkgreen;
+}

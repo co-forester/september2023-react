@@ -1,0 +1,25 @@
+.UserDetails{
+    margin-left: 39%;
+    margin-top: 13%;
+}
+.Id, .Name, .Username, .Email, .Phone, .Website{
+    display: flex;
+    justify-content: start;
+    align-items: end;
+}
+.IdFild, .NameFild, .UsernameFild, .PhoneFild, .WebsiteFild, .EmailFild{
+    font-size: 22px;
+}
+.IdValue, .NameValue, .UsernameValue, .PhoneValue, .WebsiteValue, .EmailValue{
+    margin-left: 20px;
+    color: darkgreen;
+    font-size: 33px;
+}
+.UserButton{
+    margin-top: 20px;
+    padding: 6px;
+    color: white;
+    font-size: 22px;
+    background: darkgreen;
+    box-shadow: 4px 4px 4px burlywood;
+}
