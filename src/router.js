@@ -1,8 +1,9 @@
 import {createBrowserRouter, Navigate} from "react-router-dom";
 
-import {MainLayout} from "./layouts/MainLayout";
+
 import {ErrorPage} from "./pages/ErrorPage";
 import {PostDetailsPage, PostsPage, UserDetailsPage, UsersPage} from "./pages";
+import {MainLayout} from "./layouts";
 
 
 

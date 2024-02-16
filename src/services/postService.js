@@ -1,6 +1,6 @@
 import {apiService} from "./apiService";
 
-import {urls} from "../constants/urls";
+import {urls} from "../constants";
 
 const postService = {
     getByUserId: (userId) => apiService.get(urls.posts.base, {params: {userId}}),
