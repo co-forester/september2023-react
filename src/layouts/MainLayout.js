@@ -1,12 +1,13 @@
-import {Outlet} from "react-router-dom";
+import {Outlet, useNavigate} from "react-router-dom";
 
-import {Header} from "../components/Header";
 import css from './MainLayout.module.css'
 
 const MainLayout = () => {
+    const navigate = useNavigate();
     return (
         <div className={css.MainLayout}>
-            <Header/>
+            <button onClick={() => navigate(-1)}>prev</button>
+            <button onClick={() => navigate(1)}>next</button>
             <Outlet/>
         </div>
     );

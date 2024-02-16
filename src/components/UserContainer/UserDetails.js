@@ -1,14 +1,14 @@
-import {useLocation, useNavigate} from "react-router-dom";
+import  {useNavigate} from "react-router-dom";
 
 import css from './UserDetails.module.css'
-const UserDetails = () => {
-    const {state:{user}} = useLocation();
-    console.log(user);
-    const {id, name, username, email, phone, website} = user
+
+const UserDetails = ({userDetails}) => {
+    const {id, name, username, email, phone, website} = userDetails;
+
     const navigate = useNavigate();
+
     return (
         <div className={css.UserDetails}>
-            {user && <div>
                 <div className={css.Id}>
                     <div className={css.IdFild}>id:</div>
                     <div className={css.IdValue}>{id}</div>
@@ -33,8 +33,7 @@ const UserDetails = () => {
                     <div className={css.WebsiteFild}>website:</div>
                     <div className={css.WebsiteValue}>{website}</div>
                 </div>
-                <button className={css.UserButton} onClick={() => navigate('/userPosts', {state: {id}})}>posts of current user</button>
-            </div>}
+                <button className={css.UserButton} onClick={() => navigate('posts')}>getPosts</button>
         </div>
     );
 };
