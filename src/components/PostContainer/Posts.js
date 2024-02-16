@@ -8,7 +8,7 @@ const Posts = ({userId}) => {
 
 
     useEffect(() => {
-        postService.getByUserId(userId).then(({data}) => setPosts(data))
+        postService.getByUserId(+userId).then(({data}) => setPosts(data))
     }, [userId])
 
     return (

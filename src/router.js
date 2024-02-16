@@ -17,10 +17,11 @@ const router = createBrowserRouter([
             },
             {
                 path: 'users/:id', element: <UserDetailsPage/>, children: [
-                    {
-                        path: 'posts', element: <PostsPage/>
-                    }
+
                 ]
+            },
+            {
+                path: 'users/:id/posts', element: <PostsPage/>
             },
             {
                 path: 'posts/:id', element: <PostDetailsPage/>
