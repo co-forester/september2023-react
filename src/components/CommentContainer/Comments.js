@@ -6,7 +6,7 @@ import {commentService} from "../../services";
 const Comments = ({postId}) => {
     const [comments, setComments] = useState([])
 
-    useEffect(() => {
+    useEffect( () => {
         commentService.getByPostId(postId).then(({data}) => setComments(data))
     }, [postId]);
 
