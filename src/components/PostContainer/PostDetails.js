@@ -10,6 +10,9 @@ const PostDetails = ({postDetails}) => {
             <div>title: {title}</div>
             <div>body: {body}</div>
             <hr/>
+            <hr/>
+            <hr/>
+            <hr/>
             <Comments postId={id}/>
         </div>
     );
