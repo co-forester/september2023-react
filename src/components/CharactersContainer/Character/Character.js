@@ -1,5 +1,5 @@
 const Character = ({character}) => {
-   const {id, name, url, species, status, image} = character
+   const {id, name, url, species, status} = character
     return (
         <div>
             <div>id: {id}</div>
@@ -7,8 +7,6 @@ const Character = ({character}) => {
             <div>url: {url}</div>
             <div>species: {species}</div>
             <div>status: {status}</div>
-            <div>image: {image}</div>
-
         </div>
     );
 };
