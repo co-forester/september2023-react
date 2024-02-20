@@ -8,5 +8,5 @@
 }
 .Episodes{
     display: flex;
-    flex-wrap: wrap;
+    flex-flow: wrap;
 }
