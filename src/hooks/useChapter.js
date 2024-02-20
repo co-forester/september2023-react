@@ -1,9 +1,9 @@
 import {useContext} from "react";
 
-import {Context} from "./ContextProvider";
+import {Context} from "../hoc";
 
 const useChapter = () => {
-    const [chapter, setChapter] = useContext(Context)
+    const [chapter, setChapter] = useContext(Context);
     return {
         chapter, setChapter
     }

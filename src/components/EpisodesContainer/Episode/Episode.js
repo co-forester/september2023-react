@@ -1,14 +1,19 @@
-import css from './Episode.module.css'
 import {useNavigate} from "react-router-dom";
 
+import css from './Episode.module.css'
+import {useChapter} from "../../../hooks";
+
 const Episode = ({episode}) => {
-    const {id, name,  air_date, url, created, characters}= episode;
+    const {id, name,  air_date, url, created, episode: chapter, characters}= episode;
+
     const navigate = useNavigate();
+    const {setChapter} = useChapter();
 
     const toCharacters = () => {
         const ids = characters.map(characters=>characters.split('/').slice(-1)[0]).join(',');
-        // console.log(ids)
-        navigate(`/characters/${ids}`)
+        // console.log(ids);
+        setChapter(chapter);
+        navigate(`/characters/${ids}`);
     }
 
     return (
@@ -18,6 +23,7 @@ const Episode = ({episode}) => {
             <div>air_date: {air_date}</div>
             <div>url: {url}</div>
             <div>created: {created}</div>
+            <div>chapter: {chapter}</div>
         </div>
     );
 };

@@ -11,8 +11,8 @@ const Characters = () => {
     // console.log(ids);
     // console.log(characters);
 
-    useEffect(async () => {
-        await characterService.getByIds(ids).then(({data}) => setCharacters(data))
+    useEffect( () => {
+         characterService.getByIds(ids).then(({data}) => setCharacters(data))
     }, [ids]);
 
     return (
