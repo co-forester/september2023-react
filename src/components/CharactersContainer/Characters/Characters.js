@@ -3,6 +3,7 @@ import {useEffect, useState} from "react";
 
 import {characterService} from "../../../services";
 import {Character} from "../Character";
+import css from './Characters.module.css'
 
 const Characters = () => {
     const {ids} = useParams();
@@ -15,7 +16,7 @@ const Characters = () => {
     }, [ids]);
 
     return (
-        <div>
+        <div className={css.Characters}>
             {characters.map(character=><Character key={character.id} character={character}/>)}
         </div>
     );
