@@ -2,6 +2,7 @@ import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 
 import {characterService} from "../../../services";
+import {Character} from "../Character";
 
 const Characters = () => {
     const {ids} = useParams();
@@ -15,7 +16,7 @@ const Characters = () => {
 
     return (
         <div>
-            characters.map(character)
+            characters.map(character=><Character key={character.id} character={character}/>)
         </div>
     );
 };
