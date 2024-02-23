@@ -7,3 +7,13 @@ body{
     display: flex;
     flex-direction: column;
 }
+.Buttons{
+    display: flex;
+    width: 110px;
+    margin-left: 40px;
+}
+.ButPrev, .ButNext{
+    margin: 6px;
+    box-shadow: 3px 3px 3px grey;
+}
+
