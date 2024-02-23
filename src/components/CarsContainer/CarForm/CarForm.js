@@ -7,8 +7,8 @@ import css from './CarForm.module.css'
 import {carService} from "../../../services";
 import {useAppContext} from "../../../hooks";
 
-const CarForm = ({carForUpdate, setCarForUpdate}) => {
-    const {changeTrigger} = useAppContext()
+const CarForm = () => {
+    const {changeTrigger, carForUpdate, setCarForUpdate} = useAppContext()
     const {reset, handleSubmit, register, formState: {isValid, errors}, setValue} = useForm({mode: 'all', resolver: joiResolver(carValidator)});
 
     useEffect(()=>{

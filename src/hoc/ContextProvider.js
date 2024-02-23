@@ -4,13 +4,14 @@ const Context = createContext(null)
 
 const ContextProvider = ({children}) => {
     const [trigger, setTrigger] = useState(null);
+    const [carForUpdate, setCarForUpdate] = useState(null);
     const changeTrigger = () => {
         setTrigger(prev => !prev)
     };
 
     return (
         <div>
-            <Context.Provider value={{trigger, changeTrigger}}>
+            <Context.Provider value={{trigger, changeTrigger, carForUpdate, setCarForUpdate}}>
                 {children}
             </Context.Provider>
         </div>

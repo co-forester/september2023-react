@@ -4,9 +4,9 @@ import css from './Car.module.css'
 import {carService} from "../../../services";
 import {useAppContext} from "../../../hooks";
 
-const Car = ({car, setCarForUpdate}) => {
+const Car = ({car}) => {
     const {id, brand, price, year} = car;
-    const {changeTrigger} =useAppContext();
+    const {changeTrigger, setCarForUpdate} =useAppContext();
 
     const Delete = async () => {
         await carService.deleteById(id);

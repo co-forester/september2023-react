@@ -9,9 +9,6 @@ import {useAppContext} from "../../hooks";
 const CarsContainer = () => {
     const [cars, setCars] = useState([]);
      const {trigger} = useAppContext();
-    const [carForUpdate, setCarForUpdate] = useState(null);
-
-
 
     useEffect(() => {
         carService.getAll().then(({data}) => setCars(data.items))
@@ -19,8 +16,8 @@ const CarsContainer = () => {
 
     return (
         <div className={css.CarsContainer}>
-            <CarForm  carForUpdate={carForUpdate} setCarForUpdate={setCarForUpdate}/>
-            <Cars cars={cars}  setCarForUpdate={setCarForUpdate}/>
+            <CarForm/>
+            <Cars cars={cars}/>
         </div>
     );
 };
