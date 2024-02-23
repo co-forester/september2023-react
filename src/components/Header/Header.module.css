@@ -1,0 +1,25 @@
+.Header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    color: snow;
+    background-color: #342a79;
+}
+.Header a{
+    text-decoration: none;
+    font-size: 25px;
+}
+.Header a[class='active']{
+    color: aquamarine;
+}
+.h1{
+    margin: 16px;
+}
+.Nav{
+    margin: 16px;
+}
+.Nav a{
+    color: snow;
+    margin-left: 16px;
+}
