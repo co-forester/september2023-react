@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
-import {useSearchParams} from "react-router-dom";
+import {useNavigate, useSearchParams} from "react-router-dom";
 
-import {carService} from "../../services";
+import {authService, carService} from "../../services";
 import {CarForm} from "./CarForm";
 import {Cars} from "./Cars";
 import css from './CarsContainer.module.css'
@@ -11,12 +11,16 @@ const CarsContainer = () => {
     const [cars, setCars] = useState([]);
     const [query, setQuery ] = useSearchParams({page:'1'});
     const [prevNext, setPrevNext] = useState({prev: null, next: null});
-     const {trigger} = useAppContext();
+    const {trigger} = useAppContext();
+    const navigate = useNavigate()
 
     useEffect(() => {
         carService.getAll(query.get('page')).then(({data}) => {
                 setCars(data.items);
                 setPrevNext({prev: data.prev, next: data.next})
+        }).catch(() => {
+            authService.deleteToken();
+            navigate('/login')
         })
         }, [trigger, query.get('page')])
 
