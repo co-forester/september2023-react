@@ -4,24 +4,23 @@ import {carService} from "../../services";
 import {CarForm} from "./CarForm";
 import {Cars} from "./Cars";
 import css from './CarsContainer.module.css'
+import {useAppContext} from "../../hooks";
 
 const CarsContainer = () => {
     const [cars, setCars] = useState([]);
-    const [flag, setFlag] = useState(null);
+     const {trigger} = useAppContext();
     const [carForUpdate, setCarForUpdate] = useState(null);
 
-    const trigger = () => {
-        setFlag (prev => !prev)
-    }
+
 
     useEffect(() => {
         carService.getAll().then(({data}) => setCars(data.items))
-    }, [flag])
+    }, [trigger])
 
     return (
         <div className={css.CarsContainer}>
-            <CarForm trigger={trigger} carForUpdate={carForUpdate} setCarForUpdate={setCarForUpdate}/>
-            <Cars cars={cars} trigger={trigger} setCarForUpdate={setCarForUpdate}/>
+            <CarForm  carForUpdate={carForUpdate} setCarForUpdate={setCarForUpdate}/>
+            <Cars cars={cars}  setCarForUpdate={setCarForUpdate}/>
         </div>
     );
 };

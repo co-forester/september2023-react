@@ -2,13 +2,15 @@ import React from 'react';
 
 import css from './Car.module.css'
 import {carService} from "../../../services";
+import {useAppContext} from "../../../hooks";
 
-const Car = ({car, trigger, setCarForUpdate}) => {
+const Car = ({car, setCarForUpdate}) => {
     const {id, brand, price, year} = car;
+    const {changeTrigger} =useAppContext();
 
     const Delete = async () => {
         await carService.deleteById(id);
-        trigger()
+        changeTrigger()
     }
 
     return (

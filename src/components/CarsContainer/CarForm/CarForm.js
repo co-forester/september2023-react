@@ -5,9 +5,10 @@ import {useForm} from "react-hook-form";
 import {carValidator} from "../../../validators";
 import css from './CarForm.module.css'
 import {carService} from "../../../services";
+import {useAppContext} from "../../../hooks";
 
-const CarForm = ({trigger, carForUpdate, setCarForUpdate}) => {
-
+const CarForm = ({carForUpdate, setCarForUpdate}) => {
+    const {changeTrigger} = useAppContext()
     const {reset, handleSubmit, register, formState: {isValid, errors}, setValue} = useForm({mode: 'all', resolver: joiResolver(carValidator)});
 
     useEffect(()=>{
@@ -20,12 +21,12 @@ const CarForm = ({trigger, carForUpdate, setCarForUpdate}) => {
 
     const Save = async (car) => {
         await carService.create(car);
-        trigger();
+        changeTrigger();
         reset()
     }
     const Update = async (car) => {
         await carService.updateById(carForUpdate.id, car);
-        trigger();
+        changeTrigger();
         setCarForUpdate(null);
         reset()
     }
