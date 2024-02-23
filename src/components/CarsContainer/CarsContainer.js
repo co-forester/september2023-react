@@ -17,9 +17,9 @@ const CarsContainer = () => {
         carService.getAll(query.get('page')).then(({data}) => {
                 setCars(data.items);
                 setPrevNext({prev: data.prev, next: data.next})
-            }, [trigger, query.get('page')]
-        );
-    })
+        })
+        }, [trigger, query.get('page')])
+
 
     const prev = () => {
         setQuery(prev => {
