@@ -1,4 +1,4 @@
-
+import React from 'react';
 
 const Car = ({car}) => {
     const {id, brand, year, price} = car;
