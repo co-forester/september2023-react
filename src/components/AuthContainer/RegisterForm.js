@@ -1,10 +1,11 @@
 import {useForm} from "react-hook-form";
 import {joiResolver} from "@hookform/resolvers/joi";
 import {useState} from "react";
+import {useNavigate} from "react-router-dom";
 
 import {registerValidator} from "../../validators";
 import {authService} from "../../services";
-import {useNavigate} from "react-router-dom";
+import css from './RegistrForm.module.css'
 
 const RegisterForm = () => {
     const [error, setError] = useState(null)
@@ -25,16 +26,21 @@ const RegisterForm = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit(save)}>
-            {error && <div>Username already exists</div>}
-            <div>Username: <input type="text" {...register('username')}/></div>
-            {errors.username && <div>{errors.username.message}</div>}
-            <div>Password: <input type="text" {...register('password')}/></div>
-            {errors.password && <div>{errors.password.message}</div>}
-            <div>ConfirmPassword: <input type="text" {...register('re_password')}/></div>
-            {errors.re_password && <div>{errors.re_password.message}</div>}
-            <button disabled={!isValid}>Register</button>
-        </form>
+        <div>
+            <form className={css.RegistrForm} onSubmit={handleSubmit(save)}>
+                <div className={css.div}>Username: <input className={css.Input} type="text" {...register('username')}/></div>
+                <div className={css.div}>Password: <input className={css.Input} type="text" {...register('password')}/></div>
+                <div className={css.div}>ConfirmPassword: <input className={css.Input} type="text" {...register('re_password')}/></div>
+                <div className={css.div}>
+                    <button className={css.ButRegistr} disabled={!isValid}>Register</button>
+                </div>
+            </form>
+            {error && <div className={css.ErrorMessage}>Username already exists</div>}
+            {errors.username && <div className={css.ErrorMessage}>{errors.username.message}</div>}
+            {errors.password && <div className={css.ErrorMessage}>{errors.password.message}</div>}
+            {errors.re_password && <div className={css.ErrorMessage}>{errors.re_password.message}</div>}
+        </div>
+
     );
 };
 

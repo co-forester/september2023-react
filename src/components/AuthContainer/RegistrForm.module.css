@@ -1,0 +1,27 @@
+.RegistrForm{
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+.Input{
+    margin-left: 10px;
+    margin-right: 10px;
+    outline: solid #84ab84;
+}
+.ButSave{
+    margin: 6px;
+    box-shadow: 3px 3px 3px grey;
+}
+.ErrorMessage{
+    display: flex;
+    justify-content: center;
+    color: #fc0a02;
+}
+.ButRegistr{
+    margin: 6px;
+    box-shadow: 3px 3px 3px grey;
+}
+.div{
+    display: flex;
+    align-items: center;
+}
