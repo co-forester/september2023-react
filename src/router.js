@@ -2,7 +2,8 @@ import {createBrowserRouter, Navigate} from "react-router-dom";
 
 import {AuthLayout, MainLayout, PublicLayout} from "./layouts";
 import {CarsPage, LoginPage, RegisterPage} from "./page";
-import {Cars} from "./components";
+
+
 
 const router = createBrowserRouter([
     {
