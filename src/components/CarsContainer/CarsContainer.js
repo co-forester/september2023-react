@@ -1,9 +1,11 @@
 import React, {useEffect} from 'react';
-import {carService} from "../../services";
-import {carsActions} from "../../store";
 import {useDispatch, useSelector} from 'react-redux';
 
+import {carService} from "../../services";
+import {carsActions} from "../../store";
+
 import {Cars} from "./Cars";
+import {CarForm} from "./CarForm";
 
 const CarsContainer = () => {
     const dispatch = useDispatch();

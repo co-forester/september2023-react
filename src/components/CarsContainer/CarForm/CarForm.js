@@ -1,4 +1,9 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import {useForm} from "react-hook-form";
+import {joiResolver} from "@hookform/resolvers/joi";
+
+import {carValidator} from "../../../validators";
+import css from './CarForm.module.css'
 
 const CarForm = ({trigger, carForUpdate, setCarForUpdate}) => {
 
@@ -12,17 +17,17 @@ const CarForm = ({trigger, carForUpdate, setCarForUpdate}) => {
         }
     }, [carForUpdate, setValue])
 
-    const Save = async (car) => {
-        await carService.create(car);
-        trigger();
-        reset()
-    }
-    const Update = async (car) => {
-        await carService.updateById(carForUpdate.id, car);
-        trigger();
-        setCarForUpdate(null);
-        reset()
-    }
+    // const Save = async (car) => {
+    //     await carService.create(car);
+    //     trigger();
+    //     reset()
+    // }
+    // const Update = async (car) => {
+    //     await carService.updateById(carForUpdate.id, car);
+    //     trigger();
+    //     setCarForUpdate(null);
+    //     reset()
+    // }
 
     return (
         <div>
@@ -33,7 +38,7 @@ const CarForm = ({trigger, carForUpdate, setCarForUpdate}) => {
                 <input className={css.Input} type={"number"}
                        placeholder={'year'} {...register('year', {valueAsNumber: true})}/>
                 <div>
-                    <button className={css.ButSave} disabled={!isValid}> {carForUpdate ? 'Update' : 'Save'}</button>
+                    {/*<button className={css.ButSave} disabled={!isValid}> {carForUpdate ? 'Update' : 'Save'}</button>*/}
                 </div>
             </form>
             {errors.brand && <div className={css.ErrorMessage}>brand: {errors.brand.message}</div>}
@@ -43,4 +48,4 @@ const CarForm = ({trigger, carForUpdate, setCarForUpdate}) => {
     );
 };
 
-export {Carform};
+export {CarForm};
