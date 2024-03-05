@@ -2,39 +2,23 @@ import {createSlice} from "@reduxjs/toolkit";
 
 const initialState = {
     cars: [],
-    carForUpdate: [],
-    value: [],
-    trigger: true
+    carForUpdate: null,
+    trigger: null
 }
 
 const carsSlice = createSlice({
     name: 'carsSlice',
     initialState,
     reducers: {
-        setResponse: (state, action) => {
+        setCars: (state, action) => {
             const {data} = action.payload;
             state.cars = data
         },
-        save: async ()=> {
-            // await carService.create(initialState.cars);
-            // reset();
-            // trigger()
-        },
-        update: async ()=> {
-            // await carService.updateById(initialState.cars.byId(id, car));
-            // reset();
-            // trigger()
-        },
-        delete:
-            async () => {
-                    // await carService.delete(id);
-                    // trigger()
+        setCarForUpdate: (state, actions) => {
+            state.CarForUpdate = actions.payload
         },
         trigger: state => {
             state.trigger =!state.trigger
-        },
-        reset: (state, action) => {
-
         }
     }
 })

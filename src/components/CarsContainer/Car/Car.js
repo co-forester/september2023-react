@@ -1,16 +1,17 @@
 import React from 'react';
 
-import {carsActions} from "../../../store";
 import {useDispatch} from "react-redux";
+import {carsActions} from "../../../store";
+import {carService} from "../../../services";
 import css from './Car.module.css'
 
 const Car = ({car}) => {
     const {id, brand, price, year} = car;
     const dispatch = useDispatch();
-    // const Delete = async () => {
-    //     await carService.delete(id);
-    //     trigger()
-    // }
+    const Delete = async () => {
+        await carService.delete(id);
+        dispatch(carsActions.trigger());
+    }
 
     return (
         <div className={css.Car}>
@@ -19,8 +20,8 @@ const Car = ({car}) => {
             <div>price:{price}</div>
             <div>year:{year}</div>
             <div className={css.Buttons}>
-                {/*<button className={css.ButUpdate} onClick={() => dispatch(carsActions.update())}>update</button>*/}
-                {/*<button className={css.ButDelete} onClick={() => dispatch(carsActions.update())}>delete</button>*/}
+                <button className={css.ButUpdate} onClick={() => dispatch(carsActions.setCarForUpdate(car))}>update</button>
+                <button className={css.ButDelete} onClick={Delete}>delete</button>
             </div>
         </div>
     );
