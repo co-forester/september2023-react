@@ -13,7 +13,7 @@ const CarForm = () => {
     const {reset, handleSubmit, register, formState: {isValid, errors}, setValue} = useForm({mode: 'all', resolver: joiResolver(carValidator)});
 
     const dispatch = useDispatch();
-    const carForUpdate = useSelector (state => state.cars)
+    const {carForUpdate} = useSelector (state => state.cars);
 
     useEffect(()=>{
         if (carForUpdate){
@@ -21,28 +21,27 @@ const CarForm = () => {
             setValue('price', carForUpdate.price, {shouldValidate: true});
             setValue('year', carForUpdate.year, {shouldValidate: true});
         }
-    }, [carForUpdate, setValue])
+    }, [carForUpdate, setValue]);
+
+    const Update = async (car) => {
+        await carService.updateById(carForUpdate.id, car);
+        dispatch(carsActions.setCarForUpdate(null));
+        dispatch(carsActions.trigger());
+        reset()
+    }
 
     const Save = async (car) => {
         await carService.create(car);
         dispatch(carsActions.trigger());
-       reset()
-    }
-    const Update = async (car) => {
-        await carService.updateById(carForUpdate.id, car);
-        dispatch(carsActions.trigger());
-        dispatch(carsActions.setCarForUpdate(null));
         reset()
-    }
+    };
 
     return (
         <div>
             <form onSubmit={handleSubmit(carForUpdate ? Update : Save)} className={css.CarForm}>
                 <input className={css.Input} type={"text"} placeholder={'brand'} {...register('brand')}/>
-                <input className={css.Input} type={"number"}
-                       placeholder={'price'} {...register('price', {valueAsNumber: true})}/>
-                <input className={css.Input} type={"number"}
-                       placeholder={'year'} {...register('year', {valueAsNumber: true})}/>
+                <input className={css.Input} type={"number"} placeholder={'price'} {...register('price', {valueAsNumber: true})}/>
+                <input className={css.Input} type={"number"} placeholder={'year'} {...register('year', {valueAsNumber: true})}/>
                 <div>
                     <button className={css.ButSave} disabled={!isValid}> {carForUpdate ? 'Update' : 'Save'}</button>
                 </div>

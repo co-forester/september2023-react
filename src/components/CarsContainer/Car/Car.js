@@ -8,11 +8,12 @@ import css from './Car.module.css'
 const Car = ({car}) => {
     const {id, brand, price, year} = car;
     const dispatch = useDispatch();
+
     const Delete = async () => {
         await carService.delete(id);
         dispatch(carsActions.trigger());
     }
-
+ 
     return (
         <div className={css.Car}>
             <div>id:{id}</div>

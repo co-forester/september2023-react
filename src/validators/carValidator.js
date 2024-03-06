@@ -6,11 +6,11 @@ const carValidator = Joi.object({
     }),
     price: Joi.number().min(0).max(1_000_000).required().messages({
         'number.min': 'min price 0',
-        'number.max': 'max price 1 000 000',
+        'number.max': 'max price 1 000 000'
     }),
     year: Joi.number().min(1990).max(new Date().getFullYear()).required().messages({
         'number.min': 'haha, min year 1990',
-        'number.max': 'hoho, max current year '
+        'number.max': 'ho-ho, max current year '
     })
 })
 
