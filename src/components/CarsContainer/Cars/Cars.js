@@ -1,7 +1,7 @@
 import React from 'react';
+import {useSelector} from "react-redux";
 
 import css from './Cars.module.css'
-import {useSelector} from "react-redux";
 import {Car} from "../Car";
 
 const Cars = () => {

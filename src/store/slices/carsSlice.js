@@ -12,13 +12,12 @@ const carsSlice = createSlice({
     reducers: {
         setCars: (state, action) => {
             state.cars  = action.payload;
-
         },
         setCarForUpdate: (state, action) => {
-            state.CarForUpdate = action.payload
+            state.CarForUpdate = action.payload;
         },
         trigger: state => {
-            state.trigger =!state.trigger
+            state.trigger =!state.trigger;
         }
     }
 })

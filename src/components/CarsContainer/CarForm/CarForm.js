@@ -11,7 +11,6 @@ import css from './CarForm.module.css'
 const CarForm = () => {
 
     const {reset, handleSubmit, register, formState: {isValid, errors}, setValue} = useForm({mode: 'all', resolver: joiResolver(carValidator)});
-
     const dispatch = useDispatch();
     const {carForUpdate} = useSelector (state => state.cars);
 
