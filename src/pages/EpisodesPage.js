@@ -1,18 +1,17 @@
-import {useEffect} from "react";
+import {useSearchParams} from "react-router-dom";
 
-import {Episodes} from "../components";
-import {useChapter} from "../hooks";
+import {Episodes, EpisodesPagination} from "../components";
 
 const EpisodesPage = () => {
-    const {setChapter} = useChapter();
+    const [query, setQuery] = useSearchParams( {page:'1'});
+    const page = query.get('page');
 
-    useEffect(() => {
-        setChapter(null)
-    }, []);
+    setQuery ({page: '1'})
 
     return (
         <div>
-            <Episodes/>
+            <EpisodesPagination/>
+            <Episodes page={page}/>
         </div>
     );
 };

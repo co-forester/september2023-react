@@ -1,18 +1,20 @@
 import {useParams} from "react-router-dom";
-import {useEffect, useState} from "react";
+import {useEffect} from "react";
+import {useDispatch, useSelector} from "react-redux";
 
-import {characterService} from "../../../services";
 import {Character} from "../Character";
+import {charactersActions} from "../../../store";
 import css from './Characters.module.css'
 
 const Characters = () => {
+    const dispatch = useDispatch();
+    const {characters} = useSelector (state => state.characters)
     const {ids} = useParams();
-    const [characters, setCharacters] = useState([]);
     // console.log(ids);
     // console.log(characters);
 
     useEffect( () => {
-         characterService.getByIds(ids).then(({data}) => setCharacters(data))
+        dispatch(charactersActions.getByIds(ids))
     }, [ids]);
 
     return (
