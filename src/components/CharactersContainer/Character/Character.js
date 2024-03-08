@@ -11,7 +11,7 @@ const Character = ({character}) => {
             <div>name: {name}</div>
             <div>status: {status}</div>
             <div>gender: {gender}</div>
-            <div>image: {image}</div>
+            <img src={image} alt={name}/>
         </div>
     );
 };

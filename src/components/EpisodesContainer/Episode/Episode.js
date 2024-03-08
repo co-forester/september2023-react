@@ -9,7 +9,7 @@ const Episode = ({episode}) => {
 
         const toCharacters = () => {
         const ids = characters.map(characters => characters.split('/').splice(-1)[0]).join(',');
-        navigate(/characters/${ids})
+        navigate(`/characters/${ids}`)
     }
 
     return (
