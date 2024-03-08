@@ -10,12 +10,10 @@ const Characters = () => {
     const dispatch = useDispatch();
     const {characters} = useSelector (state => state.characters)
     const {ids} = useParams();
-    // console.log(ids);
-    // console.log(characters);
 
     useEffect( () => {
         dispatch(charactersActions.getByIds(ids))
-    }, [ids]);
+    }, [ids, dispatch]);
 
     return (
         <div className={css.Characters}>

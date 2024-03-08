@@ -1,19 +1,21 @@
 import {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
+import {useSearchParams} from "react-router-dom";
 
 import {Episode} from "../Episode";
 import  css from './Episodes.module.css'
 import {episodesActions} from "../../../store";
-import {EpisodesPagination} from "../EpisodesPagination";
 
 
-const Episodes = ({page}) => {
+const Episodes = () => {
     const dispatch = useDispatch;
-    const {episodes, prevPage, nextPage} = useSelector(state => state.episodes);
+    const {episodes} = useSelector(state => state.episodes);
+    const [query] = useSearchParams( {page:'1'});
+    const page = query.get('page');
 
     useEffect(()=> {
         dispatch(episodesActions.getAll({page})
-    )}, [])
+    )}, [page, dispatch])
 
     return (
         <div className={css.EpisodesRes}>

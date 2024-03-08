@@ -1,4 +1,4 @@
-import {createAsyncThunk, createSlice, isFulfilled, isRejected} from "@reduxjs/toolkit";
+import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {characterService} from "../../services";
 
 const initialState = {
@@ -34,13 +34,6 @@ const charactersSlice = createSlice ({
                 state.prevPage = prev;
                 state.nextPage = next
             })
-            .addMatcher(isFulfilled(getByIds), state => {
-                state.errors = null
-            })
-            .addMatcher(isRejected(getByIds), (state, action) => {
-                state.errors = action.payload
-            })
-
 })
 
 const {reducer: charactersReducer, actions} = charactersSlice;

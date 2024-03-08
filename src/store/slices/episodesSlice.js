@@ -1,23 +1,19 @@
-import {createAsyncThunk, createSlice, isFulfilled, isRejected} from "@reduxjs/toolkit";
+import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {episodeService} from "../../services";
 
 const initialState = {
     episodes: [],
-    prevPage: null,
-    nextPage: null,
-    currentEpisode: null,
-    errors: null,
+    prev: null,
+    next: null,
 };
 
 const getAll = createAsyncThunk(
     'episodesSlice/getAll',
-    async (_, thunkAPI) => {
+    async ({page}, thunkAPI) => {
         try {
-            const {data} = episodeService.getAll(page);
-            return thunkAPI.fulfillWithValue(data)
+            const {data} = await episodeService.getAll(page);
+            return data
         } catch (e) {
-            const error = e.response.data;
-            // console.log(error);
             return thunkAPI.rejectWithValue(e.response.data)
         }
     }
@@ -32,14 +28,8 @@ const episodesSlice = createSlice({
             .addCase(getAll.fulfilled, (state, actions) => {
                 const {info: {prev, next}, results} = actions.payload;
                 state.episodes = results;
-                state.prevPage = prev;
-                state.nextPage = next
-            })
-            .addMatcher(isFulfilled(getAll), state => {
-                state.errors = null
-            })
-            .addMatcher(isRejected(getAll), (state, action) => {
-                state.errors = action.payload
+                state.prev = prev;
+                state.next = next
             })
 })
 

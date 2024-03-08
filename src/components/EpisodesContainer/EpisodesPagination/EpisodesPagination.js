@@ -3,8 +3,8 @@ import {useSelector} from "react-redux";
 import {useSearchParams} from "react-router-dom";
 
 const EpisodesPagination = () => {
-   const {prevPage, nextPage} = useSelector (state => state.episodes);
-   const [setQuery] =  useSearchParams()
+   const {prev, next} = useSelector (state => state.episodes);
+   const [setQuery] =  useSearchParams({page: '1'})
 
     const prevHandler = () => {
        setQuery(prev => {
@@ -22,8 +22,8 @@ const EpisodesPagination = () => {
 
     return (
         <div>
-            <button disabled={!prevPage} onClick={prevHandler}>prev page</button>
-            <button disabled={!nextPage} onClick={nextHandler}>next page</button>
+            <button disabled={!prev} onClick={prevHandler}>prev page</button>
+            <button disabled={!next} onClick={nextHandler}>next page</button>
         </div>
     );
 };
