@@ -4,10 +4,10 @@ import axios from "axios";
 
 const  characterService = {
     getByIds: async (ids) => {
-       const {data: characters} = await apiService.get(urls.characters.byIds(ids));
-       const promises = []
+       let {data: characters} = await apiService.get(urls.characters.byIds(ids));
+       const promises = [];
 
-        for (character of characters){
+        for (const character of characters) {
             promises.push(axios.get(character.image, {responseType: "Blob"}))
         }
 
