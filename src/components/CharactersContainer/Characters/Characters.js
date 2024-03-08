@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import {useParams} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 
-import {charactersActions} from "../../../stor";
+import {charactersActions} from "../../../store";
 import {Character} from "../Character";
 import css from './Characters.module.css'
 
@@ -13,7 +13,7 @@ const Characters = () => {
 
     useEffect(() => {
         dispatch(charactersActions.getAll({ids}))
-    }, [ids, dispatch]);
+    }, [ids]);
 
     return (
         <div className={css.Characters}>

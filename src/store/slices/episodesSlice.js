@@ -1,9 +1,10 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+
 import {episodeService} from "../../services";
 
 const initialState = {
-    prev: null,
-    next: null,
+    prevPage: null,
+    nextPage: null,
     episodes: [],
 };
 
@@ -28,8 +29,8 @@ const episodesSlice = createSlice({
         builder
             .addCase(getAll.fulfilled, (state, action) => {
                 const {info: {prev, next}, results} = action.payload;
-                state.prev = prev;
-                state.next = next;
+                state.prevPage = prev;
+                state.nextPage = next;
                 state.episodes = results
             })
 })

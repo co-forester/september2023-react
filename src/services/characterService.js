@@ -1,8 +1,24 @@
 import {apiService} from "./apiService";
 import {urls} from "../constants";
+import axios from "axios";
 
 const  characterService = {
-    getByIds: (ids) => apiService.get(urls.characters.byIds(ids))
+    getByIds: async (ids) => {
+       const {data: characters} = await apiService.get(urls.characters.byIds(ids));
+       const promises = []
+
+        for (character of characters){
+            promises.push(axios.get(character.image, {responseType: "Blob"}))
+        }
+
+        const responses =  await Promise.all(promises);
+        const res = responses.map(response => URL.createObjectURL(response.data));
+
+        for (let i= 0; i < characters.length; i++){
+            characters[i].image = res[i]
+        }
+        return characters
+    }
 }
 
 export {characterService}

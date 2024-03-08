@@ -1,4 +1,5 @@
 import {createAsyncThunk, createSlice, isRejectedWithValue} from "@reduxjs/toolkit";
+
 import {characterService} from "../../services";
 
 const initialState ={
@@ -11,7 +12,7 @@ const getAll = createAsyncThunk(
     'charactersSlice',
     async ({ids}, thunkAPI) => {
         try{
-            await  characterService.getByIds(ids);
+            const {data} = await  characterService.getByIds(ids);
             return  data
         }catch (e) {
            return thunkAPI.rejectWithValue(e.response.data)
@@ -30,7 +31,7 @@ const charactersSlice = createSlice({
             })
 })
 
-const { reduser: charactersReducer, actions} = charactersSlice;
+const { reducer: charactersReducer, actions} = charactersSlice;
 
 const charactersActions = {
     ...actions,

@@ -1,10 +1,10 @@
 import React from 'react';
 
 import css from './Character.module.css'
-import {charactersActions} from "../../../stor";
+import {charactersActions} from "../../../store";
 
 const Character = ({character}) => {
-    const {id, name, status, gender, image} = charactersActions
+    const {id, name, status, gender, image} = character
     return (
         <div className={css.Character}>
             <div>id: {id}</div>

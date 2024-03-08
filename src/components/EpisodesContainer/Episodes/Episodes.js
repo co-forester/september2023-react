@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 
 import {Episode} from "../Episode";
 import css from './Episodes.module.css'
-import {episodesActions} from "../../../stor";
+import {episodesActions} from "../../../store";
 import {useSearchParams} from "react-router-dom";
 const Episodes = () => {
     const {episodes} = useSelector(state => state.episodes);
@@ -14,7 +14,7 @@ const Episodes = () => {
 
     useEffect(() => {
         dispatch(episodesActions.getAll(page))
-    }, [page, dispatch]);
+    }, [page]);
 
     return (
         <div className={css.Episodes}>

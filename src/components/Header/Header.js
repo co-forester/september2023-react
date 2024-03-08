@@ -5,7 +5,7 @@ import css from './Header.module.css'
 const Header = () => {
     return (
         <div className={css.Header}>
-            Rick & Morty
+            <h1>Rick & Morty</h1>
         </div>
     );
 };

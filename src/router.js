@@ -1,4 +1,6 @@
 import {createBrowserRouter, Navigate} from "react-router-dom";
+
+
 import {MainLayout} from "./layouts";
 import {CharactersPage, EpisodesPage} from "./pages";
 
@@ -12,7 +14,7 @@ const router = createBrowserRouter([
                 path: 'episodes', element: <EpisodesPage/>
             },
             {
-                path: 'characters', element: <CharactersPage/>
+                path: 'characters/:ids', element: <CharactersPage/>
             },
         ]
     }
