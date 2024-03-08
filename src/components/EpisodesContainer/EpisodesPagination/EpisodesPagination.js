@@ -7,7 +7,8 @@ const EpisodesPagination = () => {
 
     return (
         <div>
-
+            <button>prev page</button>
+            <button>next page</button>
         </div>
     );
 };
