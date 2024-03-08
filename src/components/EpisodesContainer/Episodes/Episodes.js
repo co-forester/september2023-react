@@ -14,7 +14,7 @@ const Episodes = () => {
 
     useEffect(() => {
         dispatch(episodesActions.getAll(page))
-    }, [page]);
+    }, [page, dispatch]);
 
     return (
         <div className={css.Episodes}>

@@ -7,10 +7,13 @@ const Episode = ({episode}) => {
     const {id, name, episode: chapter, characters} = episode;
     const navigate = useNavigate();
 
-    const ids = characters.map(characters => characters.split('/').splice(-1)[0]).join();
+        const toCharacters = () => {
+        const ids = characters.map(characters => characters.split('/').splice(-1)[0]).join(',');
+        navigate(/characters/${ids})
+    }
 
     return (
-        <div onClick={()=>navigate(`/characters/${ids}`)} className={css.Episode}>
+        <div onClick={toCharacters} className={css.Episode}>
             <div>id: {id}</div>
             <div>name: {name}</div>
             <div>chapter: {chapter}</div>
