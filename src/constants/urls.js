@@ -1,6 +1,6 @@
 const baseURL = 'https://rickandmortyapi.com/api';
 
-const episodes = '/episodes';
+const episodes = '/episode';
 const characters = '/characters';
 
 const  urls = {

@@ -4,17 +4,23 @@ import {episodeService} from "../../services";
 const initialState = {
     prev: null,
     next: null,
-    episodes: []
+    episodes: [],
+    loading: null,
+    error: null
 };
 
 const getAll = createAsyncThunk(
     'episodesSlice/getAll',
     async ({page}, thunkAPI) => {
         try {
+            await new Promise(resolve => setTimeout(resolve, 3000))
             const {data} = await episodeService.getAll(page);
+            // return thunkAPI.fulfillWithValue(data);
             return data
         } catch (e) {
-            return thunkAPI.rejectWithValue(e.response.data)
+            const error = e.response.data;
+            console.log(error);
+            return thunkAPI.rejectWithValue(error)
         }
     }
 )
