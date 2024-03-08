@@ -1,0 +1,9 @@
+.CharacterBlock{
+    border: solid 1px;
+    margin: 3px;
+}
+.Character{
+    display: flex;
+    flex-direction: column;
+    padding: 3px 0 3px 6px;
+}

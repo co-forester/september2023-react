@@ -1,3 +1,12 @@
-.Episodes{
+.EpisodesRes{
 
+}
+.EpisodesButton{
+    display: flex;
+    justify-content: space-around;
+    margin: 4px 0 4px 0;
+}
+.Episodes{
+    display: flex;
+    flex-flow: wrap;
 }
