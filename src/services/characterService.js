@@ -1,6 +1,7 @@
-import {apiService} from "./apiService";
-import {urls} from "../constants";
 import axios from "axios";
+
+import {urls} from "../constants";
+import {apiService} from "./apiService";
 
 const  characterService = {
     getByIds: async (ids) => {

@@ -28,7 +28,7 @@ const episodesSlice = createSlice({
     extraReducers: builder =>
         builder
             .addCase(getAll.fulfilled, (state, action) => {
-                const {info: {prev, next}, results} = action.payload;
+                const {info:{prev, next}, results} = action.payload;
                 state.prevPage = prev;
                 state.nextPage = next;
                 state.episodes = results
